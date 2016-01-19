@@ -1,0 +1,154 @@
+//animations-------------------------//
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(180deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(180deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(180deg);}
+}
+@-moz-keyframes flip {
+    from { -moz-transform: rotateY(0deg); }
+    to { -moz-transform: rotateY(180deg); }
+}
+@-webkit-keyframes flip {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(180deg); }
+}
+@keyframes flip {
+    from {transform:rotateY(0deg);}
+    to {transform:rotateY(180deg);}
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+//added classes -------------------//
+.flip{
+  -webkit-animation:flip ease-in 1;  /* call our keyframe named flip, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:flip ease-in 1;
+  animation:flip ease-in 1;
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+.fade-in{
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+.flip90{
+  transform:rotateY(90deg);
+}
+///-------loading page css and animation----///
+#cube .front  { transform: rotateY(   0deg ); }
+#cube .back   { transform: rotateX( 180deg ); }
+#cube .right  { transform: rotateY(  90deg ); }
+#cube .left   { transform: rotateY( -90deg ); }
+#cube .top    { transform: rotateX(  90deg ); }
+#cube .bottom { transform: rotateX( -90deg ); }
+
+#cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+
+.show-front  { transform: translateZ( -100px ) rotateY(    0deg ); }
+.show-back   { transform: translateZ( -100px ) rotateX( -180deg ); }
+.show-right  { transform: translateZ( -100px ) rotateY(  -90deg ); }
+.show-left   { transform: translateZ( -100px ) rotateY(   90deg ); }
+.show-top    { transform: translateZ( -100px ) rotateX(  -90deg ); }
+.show-bottom { transform: translateZ( -100px ) rotateX(   90deg ); }
+
+.loading-page-wrapper{
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  background-color: black;
+  margin: 0;
+}
+.container-cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: auto;
+  margin-top:200px;
+  perspective: 1000px;
+}
+
+#cube {
+  transition: all 2s ease;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+#cube figure {
+  margin: 0;
+  width: 199px;
+  height: 199px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  // border: 2px solid white;
+}
+
+
+//---main page css----//
+.scroll-y{
+  overflow-y: hidden;
+}
+.jumbotron{
+  transition: all 1.2s;
+}
+.fun-mode-div{
+  background-image: url(' http://www.placecage.com/200/300');
+}
+body{
+  width: 100%;
+height: 100%;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+#b {
+    width: 100%;
+    height: 1500px;
+    border: 1px solid #111;
+    padding: 20px;
+    position: fixed;
+    overflow:hidden;
+    overflow-x: scroll;
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
+.img_holder {
+    padding: 200px;
+    margin: 0,100px,0,auto;
+    height: 1500px;
+    width: 8000px;
+    .img {
+        height: 400px;
+        margin: 0,200px,0,200px;
+        width: 800px;
+        padding: 5px;
+        background-color:green;
+        display: inline-block;
+    }
+}
