@@ -1,14 +1,34 @@
-<div class="text-center loading-page-wrapper">
+
+<div ng-controller = "MainController" class="wrapper-cube text-center">
+  <video loop muted autoplay poster="../../files/video.jpg"class="fullscreen-video">
+     <source src="../../files/batter.mp4" type="video/mp4">
+  </video>
   <section class="container-cube">
     <div id="cube">
-      <figure class="front">1</figure>
-      <figure class="back">2</figure>
-      <figure class="right">3</figure>
-      <figure class="left">4</figure>
-      <figure class="top">5</figure>
-      <figure class="bottom">6</figure>
+      <figure class="front"><p>
+        Charles  G. Lane
+      </p></figure>
+      <figure class="back"><p>
+        Web Developer
+      </p></figure>
+      <figure class="right"><p>
+        Iron Yard 2015
+      </p></figure>
+      <figure class="left"><p>
+        UX Focus
+      </p></figure>
+      <figure class="top"><p>
+        Front-end Engineering
+      </p></figure>
+      <figure class="bottom"><p>
+        Style
+      </p></figure>
     </div>
   </section>
-  <br>
-  <a class = "fade-in" ui-sref="home"><span>Skip</span></a>
+    <animated-hamburger ng-click = 'showNavigation(true)'></animated-hamburger>
+    <my-name></my-name>
 </div>
+
+<h1 id = "name-tag"> 2016 Charles Lane, Charleston SC</h1>
+<!-- <h1 id = "charles">Charles<small></small></h1>
+<h1 id = "lane"> Lane<small></small></h1> -->

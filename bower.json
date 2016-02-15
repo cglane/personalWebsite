@@ -18,6 +18,7 @@
     "angular-route": "~1.4.8",
     "angular": "~1.4.8",
     "jquery": "~2.1.4",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "circletype.js": "*"
   }
 }

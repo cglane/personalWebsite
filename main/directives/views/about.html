@@ -1,0 +1,20 @@
+<div id= 'about-me-id'>
+  <a href="../../files/resume.pdf"download="Resume Charles Lane 2016.pdf"><span>About Me </span></a>
+  <a href="../../files/resume.pdf"download="Resume Charles Lane 2016.pdf"><span class = "glyphicon glyphicon-download"></span></a>
+</div>
+
+<div class="about-wrapper">
+<div class="horizontal-timeline">
+  <li class = "hello"ng-repeat = "date in timeline">
+    <hr>
+    <h3 > {{date.date}}<small></small></h1>
+      <span ng-click = "showInfo(date, $index); localVar = 'highlight'" ng-class = "localVar"class = "glyphicon glyphicon-chevron-down"></span>
+  </li>
+</div>
+<div class="timeline-date-information">
+  <img src="{{currentImage}}" alt="" />
+  <p>
+    {{currentInformation}}
+  </p>
+</div>
+</div>

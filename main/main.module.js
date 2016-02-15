@@ -16,7 +16,7 @@
       'ngRoute',
       'ui.router',
       'underscore',
-      'jquery'
+      'jquery',
 
     ])
 
@@ -33,24 +33,11 @@
               templateUrl: 'main/views/landing.html'
           })
           .state('home', {
-              url: '/home',
-              controller:'MainController',
+              url: '/home/:id',
+              controller:'HomeController',
               templateUrl: 'main/views/main.html'
           })
 
-          // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-          .state('home.list', {
-        url: '/list',
-        controller:'MainController',
-        templateUrl: 'main/views/resume.html',
-    })
-
-    // nested list with just some random string data
-    .state('home.paragraph', {
-        url: '/paragraph',
-        controller:'MainController',
-        templateUrl: 'main/views/viewCards.html'
-    })
 
 
   });

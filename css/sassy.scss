@@ -27,6 +27,10 @@
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
 //added classes -------------------//
 .flip{
   -webkit-animation:flip ease-in 1;  /* call our keyframe named flip, use animattion ease-in and repeat it only 1 time */
@@ -50,23 +54,54 @@
   -moz-animation-duration:1s;
   animation-duration:1s;
 }
+.fade-out{
+  -webkit-animation:fadeOut ease-in 1;  /* call our keyframe named fadeOut, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeOut ease-in 1;
+  animation:fadeOut ease-in 1;
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+.fade-out-slow{
+  -webkit-animation:fadeOut ease-in 1;  /* call our keyframe named fadeOut, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeOut ease-in 1;
+  animation:fadeOut ease-in 1;
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  -webkit-animation-duration:6s;
+  -moz-animation-duration:6s;
+  animation-duration:6s;
+}
 .flip90{
-  transform:rotateY(90deg);
+    transform:rotateY(90deg);
+}
+.flip360{
+  transform:rotateY(360deg);
+}
+.hide{
+  opacity: 1;
+}
+.highlight{
+  background-color: black;
 }
 ///-------loading page css and animation----///
-#cube .front  { transform: rotateY(   0deg ); }
+#cube .front  { transform: rotateY(   0deg ); background-image:url(../../Photos/CharlesLane.jpg); background-size: 200px 200px;}
 #cube .back   { transform: rotateX( 180deg ); }
 #cube .right  { transform: rotateY(  90deg ); }
 #cube .left   { transform: rotateY( -90deg ); }
 #cube .top    { transform: rotateX(  90deg ); }
 #cube .bottom { transform: rotateX( -90deg ); }
 
-#cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); }
-#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
-#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
-#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
-#cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
-#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+#cube .front  { transform: rotateY(   0deg ) translateZ( 25px ); }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 25px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 25px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 25px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 25px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 25px ); }
 
 .show-front  { transform: translateZ( -100px ) rotateY(    0deg ); }
 .show-back   { transform: translateZ( -100px ) rotateX( -180deg ); }
@@ -75,41 +110,175 @@
 .show-top    { transform: translateZ( -100px ) rotateX(  -90deg ); }
 .show-bottom { transform: translateZ( -100px ) rotateX(   90deg ); }
 
-.loading-page-wrapper{
-  width: 100%;
-  height: 1000px;
-  position: absolute;
-  background-color: black;
-  margin: 0;
-}
-.container-cube {
-  width: 200px;
-  height: 200px;
-  position: relative;
+//hamburger-animation directive
+
+
+.hamburger-nav-wrapper{
+  opacity: 0;
+  z-index: 2;
+  height: 700px;
+  width: 50%;
   margin: auto;
-  margin-top:200px;
-  perspective: 1000px;
+  margin-top: 50px;
+  a{color:black;}
+  .link-wrapper {
+    position: relative;
+    margin-top:10px;
+    .shape {
+      stroke-dasharray: 130 600;
+      stroke-dashoffset: -474;
+      stroke-width: 2px;
+      stroke: white;
+      margin-right: 200px;
+      fill: transparent;
+      transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+    }
+    .text {
+      font-size: 40px;
+      color: #fff;
+      top: -48px;
+      position: relative;
+    }
+  }
 }
 
+.link-wrapper:hover .shape {
+  stroke: #19f6e8;
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+
+
+
+
+h1,h2,h3,h4,h5,p,li{
+  font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#name-tag{
+  position: absolute;
+  transform: rotate(90deg);
+  right: -90px;
+  bottom: 200px;
+  color: black;
+  z-index: 5;
+}
+#my-name{
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  span{
+    z-index: 10;
+    font-size: 70px;
+    letter-spacing: 10px;
+    opacity: 0;
+    display: inline-block;
+  }
+}
+
+#hamburger-icon{
+  width:50px;
+  height: 50px;
+  position: absolute;
+  top: -35px;
+  left: 5px;
+  span{
+    display: block;
+    margin: 5px;
+    background: black;
+    width: 40px;
+    height: 10px;
+    border-radius: 1px;
+  }
+}
+.wrapper-cube{
+  z-index: 1;
+  width: auto;
+  text-align: center;
+  background:none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  video{
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: -60px;
+  }
+}
+.container-cube {
+  transition: 1s;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 10px;
+  top: -92px;
+  perspective: 1000px;
+  figure{
+    border: solid black 1px;
+  p{
+    width: 20px;
+    margin: auto;
+    margin-top: 0px;
+    height: 20px;
+    font-size: 5px;
+    transition: 1s;
+  }
+  }
+  &:hover{
+    width: 200px;
+    height: 200px;
+    top:200px;
+    left: 40%;
+    #cube figure{
+      width: 200px;
+      height: 200px;
+    }
+    #cube .front  { transform: rotateY(   0deg ) translateZ( 125px ); }
+    #cube .back   { transform: rotateX( 180deg ) translateZ( 125px ); }
+    #cube .right  { transform: rotateY(  90deg ) translateZ( 125px ); }
+    #cube .left   { transform: rotateY( -90deg ) translateZ( 125px ); }
+    #cube .top    { transform: rotateX(  90deg ) translateZ( 125px ); }
+    #cube .bottom { transform: rotateX( -90deg ) translateZ( 125px ); }
+    p{
+      width: 170px;
+      height: 200px;
+      font-size: 30px;
+      margin-top: 30px;
+    }
+  }
+}
 #cube {
   transition: all 2s ease;
   width: 100%;
   height: 100%;
-  margin: auto;
-  position: absolute;
+  position: relative;
+  margin-left: 70px;
+  margin-top: 70px;
   transform-style: preserve-3d;
 }
 
 #cube figure {
   margin: 0;
-  width: 199px;
-  height: 199px;
+  width: 30px;
+  height: 30px;
   display: block;
   position: absolute;
   background-color: white;
+  transition: 1s;
   // border: 2px solid white;
 }
-
 
 //---main page css----//
 .scroll-y{
@@ -129,9 +298,8 @@ overflow-y: hidden;
 }
 #b {
     width: 100%;
-    height: 1500px;
+    height: 1000px;
     border: 1px solid #111;
-    padding: 20px;
     position: fixed;
     overflow:hidden;
     overflow-x: scroll;
@@ -139,16 +307,246 @@ overflow-y: hidden;
     overflow-y: hidden;
 }
 .img_holder {
-    padding: 200px;
-    margin: 0,100px,0,auto;
-    height: 1500px;
+    height: 1000px;
     width: 8000px;
     .img {
-        height: 400px;
-        margin: 0,200px,0,200px;
-        width: 800px;
-        padding: 5px;
-        background-color:green;
+        height: 782px;
+        width: auto;
+        background-color:white;
+        border-top: solid black 20px;
+        border-bottom: solid black 20px;
         display: inline-block;
     }
+    .contact{
+      vertical-align: top;
+    }
+    .about{
+      vertical-align: top;
+      width: 1500px;
+    }
+}
+#about-me-id{
+  width:200px;
+  color:black;
+  font-size: 20px;
+  margin: 5px;
+  a{
+    color:black;
+  }
+}
+
+.about-wrapper{
+  .horizontal-timeline{
+    width: 1400px;
+    margin-left: 50px;
+    li{
+      width: 200px;
+      margin: 0px;
+      display: inline-block;
+      hr{
+        height: 5px;
+        border-left:solid black 1px;
+      }
+      h3{width:50px;}
+      .glyphicon-chevron-down{
+        border:solid black 1px;
+        border-radius: 100%;
+      }
+    }
+  }
+  .timeline-date-information{
+    img{width: 500px;
+      border-radius: 5px;
+      margin: auto;
+      margin-top: 50px;
+      float: left;
+    }
+    p{
+        border: solid black 1px;
+        border-radius: 20px;
+        font-size: 35px;
+        padding: 20px;
+        width: 400px;
+        margin: auto;
+        margin-left: 100px;
+        margin-top: 200px;
+        line-height: 30px;
+    }
+    p,img{display: inline-block;}
+
+  }
+}
+.portfolio-wrapper{
+  max-width: 90%;
+  div{
+    padding: 50px;
+    background-color: red;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 50px;
+    transition: 1s;
+    &:hover{
+      padding-top: 40px;
+      width: 500px;
+      height: 500px;
+      p{
+        opacity: 1;
+        margin-top: 0px;
+        font-size: 20px;
+        z-index: 2;
+        background-color: white;
+      }
+
+    }
+    p{
+      max-width: 100%;
+      transition: 1s;
+      opacity: 0;
+      margin-top: 300px;
+      padding: 20px;
+    }
+    h1{
+      max-width: 100%;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    a{
+      max-width: 100%;
+      color: black;
+    }
+  }
+  .dot{
+    width: 50px;
+    height: 50px;
+    background: black;
+    padding: 0;
+    &:hover{
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .one{
+    background-image: url('https://cdn3.bigcommerce.com/s-2q6av/product_images/uploaded_images/scrabble.jpg');
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+    &:hover{
+      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5),url('https://cdn3.bigcommerce.com/s-2q6av/product_images/uploaded_images/scrabble.jpg'));
+      background-color: red;
+    }
+  }
+  .two{
+    background-image: url('../../Photos/VDL.png ');
+    background-repeat: no-repeat;
+    background-size: 600px 600px;
+  }
+  .three{
+    background-image: url('../../Photos/news.png');
+    background-repeat: no-repeat;
+    background-size: 600px 550px;
+  }
+  .four{
+    background-image:url('../../Photos/WeDay.png');
+    background-size: 600px 600px;
+    background-position: -120px -90px;
+  }
+}
+.selection-projects{
+  margin-top: 200px;
+  font-size: 4em;
+}
+.wrapper-contact{
+  padding: 50px;
+  transition: 1s;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 100%;
+  background-color: red;
+  h1{opacity: 0;
+    width: 185px;
+  }
+  .other-circle{
+    width: 800px;
+    height: 800px;
+    background: none;
+    background-color: none;
+    border: none;
+    margin-left: -100px;
+    margin-top: -450px;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    .moon-circle{
+      transition: 1s;
+      margin-left: 490px;
+      margin-top: 50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      background-color: yellow;
+      z-index: 3;
+      -webkit-user-select: none; /* Chrome/Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+ */
+      span{
+        z-index: 2;
+        margin-top: 25px;
+        -webkit-tap-highlight-color:transparent;
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+      }
+    }
+  }
+  #phone{
+    margin-left: 100px;
+  }
+  #email{
+    margin-top: 120px;
+    margin-left: 280px;
+    transform: rotate(90deg);
+  }
+  #address{
+    margin-left:  50px;
+    transform: rotate(-180deg);
+    margin-top: 250px;
+  }
+  #name{
+    transform:rotate(270deg);
+    margin-top: -100px;
+    margin-left: -50px;
+  }
+
+}
+.rotary-div{
+  z-index: 5;
+  top: 30px;
+  position: absolute;;
+  left: 3200px;
+}
+.contact-drop-down{
+  h1{
+    font-size: 30px;
+  }
+  .glyphicon-ok{
+    float: right;
+    margin-right: 5px;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+  transition:1s;
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  left: 2500px;
+  top:-500px;
+  background-color: black;
+  color:white;
+  border-top: 20px solid green;
+  border-left: 5px solid green;
 }

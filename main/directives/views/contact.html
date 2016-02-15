@@ -1,0 +1,27 @@
+<div class="wrapper-contact">
+  <h1 ng-class = "{'hide':phone}"id = "phone">Phone: (843) 647 -9951 <small></small></h1>
+  <h1 ng-class = "{'hide':email}"id = "email">charleslane23@gmail.com <small></small></h1>
+  <h1 ng-class = "{'hide':name}"id = 'name'><a href="http://www.github.com/cglane">github.com/cglane</a> <small></small></h1>
+  <h1 ng-class = "{'hide':address}"id = 'address'>Charleston, SC <small></small></h1>
+  <pre class = 'other-circle'>
+    <div class="moon-circle">
+      <span id = "drag-spin"class = "glyphicon glyphicon-hand-up">Drag and Drop</span>
+    </div>
+  </pre>
+</div>
+<div class="rotary-div">
+  <span ng-click = 'var = !var;showContact(var)'id = "spin-rotary"class = "glyphicon glyphicon-hand-right">Click Me</span>
+</div>
+
+<div class="contact-drop-down">
+  <h1>Contact <small></small></h1>
+  <h3>Email: <a href="mailto:charleslane23@gmail.com">charleslane23@gmail.com</a> <small></small></h3>
+  <h3>Phone: (843)647-9951<small></small></h3>
+  <h3>Snail Mail: <small></small></h3>
+  <p>
+    P.O 20546<br>
+    Charleston, SC <br>
+    29413
+  </p>
+  <span ng-click = "var = !var;showContact(var)"class = "glyphicon glyphicon-ok"></span>
+</div>
