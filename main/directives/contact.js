@@ -48,17 +48,17 @@
                 isDragging = false;
               }
               if(position == 0){
-                $('#phone').addClass('fade-out-slow');
-                setTimeout(function () {$('#phone').removeClass('fade-out-slow');}, 6000);
+                $('#phone').css("color",'red')
+                // $('#phone').addClass('fade-out-slow');
+                // setTimeout(function () {$('#phone').removeClass('fade-out-slow');}, 6000);
               }else if(position == 90){
                 $('#name').addClass('fade-out-slow');
-                setTimeout(function () {$('#name').removeClass('fade-out-slow');}, 6000);
+                // setTimeout(function () {$('#name').removeClass('fade-out-slow');}, 6000);
               }else if(position == 180){
                 $('#address').addClass('fade-out-slow');
-                setTimeout(function () {$('#address').removeClass('fade-out-slow');}, 6000);
+                // setTimeout(function () {$('#address').removeClass('fade-out-slow');}, 6000);
               }else if(position == 270){
-                setTimeout(function () {$('#email').removeClass('fade-out-slow');}, 6000);
-                $('#email').addClass('fade-out-slow');
+                $('.contact-drop-down').css("opacity",'1')
               }
             });
             scope.showContact = function(bool){
@@ -69,6 +69,14 @@
                 $('.contact-drop-down').css('top','-500px');
               }
 
+            }
+            scope.showAudio = function(event){
+              var audio = event.target.parentElement.children[1];
+              console.log('audio',audio)
+              $(audio).addClass('fade-in')
+              var vis = event.target;
+
+              // $(this).closest("a").css('display','none');
             }
 
 

@@ -1,19 +1,69 @@
-<div class="wrapper-contact">
-  <h1 ng-class = "{'hide':phone}"id = "phone">Phone: (843) 647 -9951 <small></small></h1>
-  <h1 ng-class = "{'hide':email}"id = "email">charleslane23@gmail.com <small></small></h1>
-  <h1 ng-class = "{'hide':name}"id = 'name'><a href="http://www.github.com/cglane">github.com/cglane</a> <small></small></h1>
-  <h1 ng-class = "{'hide':address}"id = 'address'>Charleston, SC <small></small></h1>
+<!-- <div class="wrapper-contact">
   <pre class = 'other-circle'>
     <div class="moon-circle">
       <span id = "drag-spin"class = "glyphicon glyphicon-hand-up">Drag and Drop</span>
     </div>
   </pre>
-</div>
-<div class="rotary-div">
+</div> -->
+<!-- <div class="rotary-div">
   <span ng-click = 'var = !var;showContact(var)'id = "spin-rotary"class = "glyphicon glyphicon-hand-right">Click Me</span>
+</div> -->
+<div class="contact-on-drop">
+  <h1>Contact <small></small></h1>
+  <h3>Email: <a href="mailto:charleslane23@gmail.com"></a> <small></small>charleslane23@gmail.com</h3>
+  <h3>Phone: (843)647-9951<small></small></h3>
+  <h3>Snail Mail: <small></small></h3>
+  <p>
+    P.O 20546<br>
+    Charleston, SC <br>
+    29413
+  </p>
+</div>
+<div class="icon-links">
+<a href="https://www.linkedin.com/in/charles-lane-8a305411?authType=name&authToken=XSZb&trk=connect_hub_pymk_profile_photo&invAcpt=">  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" alt="" />
+</a>
+<a href="https://github.com/cglane"><img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" alt="" /></a>
+</div>
+<div class="coding-music">
+  <h3>Some of my favorite coding music <small></small></h3>
+  <!-- <audio controls>
+  <source src="../../files/caribbean.mp4" title = "Caribbean Power" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> -->
+<div ng-mouseover = 'showAudio($event)'class="audio-channel">
+  <a href="http://www.pandora.com/station/play/2824865222660739157"><img class = 'pandora'src="http://www.georgetowncollege.edu/georgetonian/wp-content/blogs.dir/90/files/2013/09/pandora.png" alt="" />Miike Snow Station</a>
+  <audio controls>
+    <source src="../../files/miike.mp4" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+</div>
+<div ng-mouseover = 'showAudio($event)'class="audio-channel">
+  <a href="http://www.pandora.com/station/play/2504377799575097429"><img class = 'pandora'src="http://www.georgetowncollege.edu/georgetonian/wp-content/blogs.dir/90/files/2013/09/pandora.png" alt="" />Cold War Kids</a>
+  <audio controls>
+    <source src="../../files/coldwar.mp4" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+</div>
+<div ng-mouseover = 'showAudio($event)'class="audio-channel">
+  <a href="http://www.pandora.com/station/play/2857527203406303317"><img class = 'pandora'src="http://www.georgetowncollege.edu/georgetonian/wp-content/blogs.dir/90/files/2013/09/pandora.png" alt="" />Nathaniel Rateliff</a>
+  <audio controls>
+    <source src="../../files/nathaniel.mp4" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+</div>
+<div ng-mouseover = 'showAudio($event)'class="audio-channel">
+  <a href="http://www.pandora.com/station/play/1719333927636455509"><img class = 'pandora'src="http://www.georgetowncollege.edu/georgetonian/wp-content/blogs.dir/90/files/2013/09/pandora.png" alt="" />Alt-J</a>
+  <audio controls>
+    <source src="../../files/alt.mp4" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
 </div>
 
-<div class="contact-drop-down">
+
+
+
+</div>
+<!-- <div class="contact-drop-down">
   <h1>Contact <small></small></h1>
   <h3>Email: <a href="mailto:charleslane23@gmail.com">charleslane23@gmail.com</a> <small></small></h3>
   <h3>Phone: (843)647-9951<small></small></h3>
@@ -24,4 +74,6 @@
     29413
   </p>
   <span ng-click = "var = !var;showContact(var)"class = "glyphicon glyphicon-ok"></span>
-</div>
+</div> -->
+<h1 class = "contact-banner"> &#60-Contact Information-- - --- -- > <small></small></h1>
+<h1 class = "music-banner"> &#60-More About Me-- - --- -- > <small></small></h1>

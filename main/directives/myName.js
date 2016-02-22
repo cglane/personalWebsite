@@ -12,12 +12,12 @@
           var currIndex = 0;
           setInterval(function(){
             if(currIndex > letters.length){
-              $('#my-name span').addClass('fade-out');
-              var cube = '.container-cube';
-              $(cube).css({
-                'top':'200px',
-                'left': '20%',
-              });
+              // $('#my-name span').addClass('fade-out');
+              // var cube = '.container-cube';
+              // $(cube).css({
+              //   'top':'200px',
+              //   'left': '20%',
+              // });
             }else{
               letters.eq(currIndex).css('opacity','1');
               currIndex++;
