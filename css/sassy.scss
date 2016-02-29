@@ -228,6 +228,7 @@ a{
     background-color: black;
   }
 }
+
 .container-cube {
   transition: 1s;
   width: 200px;
@@ -246,28 +247,6 @@ a{
     font-size: 5px;
     transition: 1s;
   }
-  }
-  &:hover{
-    width: 200px;
-    height: 200px;
-    top:200px;
-    left: 40%;
-    #cube figure{
-      width: 200px;
-      height: 200px;
-    }
-    #cube .front  { transform: rotateY(   0deg ) translateZ( 125px ); }
-    #cube .back   { transform: rotateX( 180deg ) translateZ( 125px ); }
-    #cube .right  { transform: rotateY(  90deg ) translateZ( 125px ); }
-    #cube .left   { transform: rotateY( -90deg ) translateZ( 125px ); }
-    #cube .top    { transform: rotateX(  90deg ) translateZ( 125px ); }
-    #cube .bottom { transform: rotateX( -90deg ) translateZ( 125px ); }
-    p{
-      width: 170px;
-      height: 200px;
-      font-size: 30px;
-      margin-top: 30px;
-    }
   }
 }
 .fullscreen-video{
@@ -293,7 +272,29 @@ a{
   transition: 1s;
   // border: 2px solid white;
 }
+.active{
+  width: 200px;
+  height: 200px;
+  top:150px;
+  left: 500px;
+  #cube figure{
+    width: 200px;
+    height: 200px;
+    p{
+      width: 170px;
+      height: 200px;
+      font-size: 20px;
+      margin-top: 80px;
+    }
+  }
+  #cube .front  { transform: rotateY(   0deg ) translateZ( 125px ); }
+  #cube .back   { transform: rotateX( 180deg ) translateZ( 125px ); }
+  #cube .right  { transform: rotateY(  90deg ) translateZ( 125px ); }
+  #cube .left   { transform: rotateY( -90deg ) translateZ( 125px ); }
+  #cube .top    { transform: rotateX(  90deg ) translateZ( 125px ); }
+  #cube .bottom { transform: rotateX( -90deg ) translateZ( 125px ); }
 
+}
 //---main page css----//
 .scroll-y{
   overflow-y: hidden;
@@ -368,11 +369,12 @@ background-color: black;
     }
   }
   .timeline-date-information{
-    img{width: 500px;
+    img{width: 300px;
       border-radius: 5px;
       margin: auto;
       margin-top: 50px;
       float: left;
+      margin-left: 10px;
     }
     p{
         border: solid black 1px;
@@ -416,8 +418,8 @@ background-color: black;
     transition: 1s;
     &:hover{
       padding-top: 40px;
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
       p{
         opacity: 1;
         margin-top: 0px;
@@ -445,8 +447,8 @@ background-color: black;
     }
   }
   .dot{
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     background: black;
     padding: 0;
     &:hover{
@@ -483,57 +485,7 @@ background-color: black;
   margin-top: 200px;
   font-size: 4em;
 }
-.coding-music{
-  audio{
-    opacity: 0;
-  }
-}
-// .wrapper-contact{
-//   padding: 50px;
-//   transition: 1s;
-//   width: 100px;
-//   height: 100px;
-//   margin: auto;
-//   margin-top: 200px;
-//   border-radius: 100%;
-//   background-color: red;
-//   h1{opacity: 0;
-//     width: 185px;
-//   }
-//   .other-circle{
-//     width: 700px;
-//     height: 700px;
-//     background: none;
-//     background-color: none;
-//     border: none;
-//     margin-left: -100px;
-//     margin-top: -650px;
-//     -webkit-user-select: none; /* Chrome/Safari */
-//     -moz-user-select: none; /* Firefox */
-//     -ms-user-select: none; /* IE10+ */
-//     .moon-circle{
-//       transition: 1s;
-//       margin-left: 200px;
-//       margin-top: 600px;
-//       width: 20px;
-//       height: 20px;
-//       border-radius: 100%;
-//       background-color: yellow;
-//       z-index: 3;
-//       -webkit-user-select: none; /* Chrome/Safari */
-//       -moz-user-select: none; /* Firefox */
-//       -ms-user-select: none; /* IE10+ */
-//       span{
-//         z-index: 2;
-//         margin-top: 25px;
-//         -webkit-tap-highlight-color:transparent;
-//         -webkit-user-select: none; /* Chrome/Safari */
-//         -moz-user-select: none; /* Firefox */
-//         -ms-user-select: none; /* IE10+ */
-//       }
-//     }
-//   }
-// }
+
 .contact-on-drop{
   position: absolute;
   left:2800px;
@@ -553,23 +505,26 @@ background-color: black;
 
 }
 .icon-links{
-  width: 200px;
+  width: 500px;
   a{
     display: inline-block;
   }
   position: absolute;
-  left: 3000px;
-  top:500px;
+  left: 2700px;
+  top:400px;
   img{
     display: inline-block;
 
-    max-width: 80px;
+    max-width: 200px;
   }
 }
 .coding-music{
-  width: 200px;
+  audio{
+    opacity: 0;
+  }
+  width: 400px;
   position: absolute;
-  left: 3500px;
+  left: 3350px;
   top: 60px;
   a{
   color:black;
@@ -586,13 +541,14 @@ background-color: black;
 }
 .music-banner{
   transform: rotate(90deg);
-  margin-left: 300px;
-  margin-top: 200px;
+  margin-left: 100px;
+  margin-top: 250px;
   font-size: 30px;
 }
 .pandora-stations{
   display: block;
   audio{
+    opacity: 0;
     display:none;
   }
   &:hover{
@@ -601,30 +557,16 @@ background-color: black;
     }
   }
 }
-// .rotary-div{
-//   z-index: 5;
-//   top: 30px;
-//   position: absolute;;
-//   left: 3200px;
-// }
-// .contact-drop-down{
-//   h1{
-//     font-size: 30px;
-//   }
-//   .glyphicon-ok{
-//     float: right;
-//     margin-right: 5px;
-//     margin-top: 30px;
-//     font-size: 30px;
-//   }
-//   transition:1s;
-//   position: absolute;
-//   width: 250px;
-//   height: 350px;
-//   left: 3200px;
-//   top:-500px;
-//   background-color: black;
-//   color:white;
-//   border-top: 20px solid green;
-//   border-left: 5px solid green;
-// }
+.return-landing{
+  float: left;
+  font-size: 30px;
+  color:black;
+  background: none;
+  width: 100px;
+  height: 100px;
+  a{
+    text-decoration: none;
+    color:black;
+    font-size: 15px;
+  }
+}

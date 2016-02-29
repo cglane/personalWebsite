@@ -9,10 +9,13 @@
         templateUrl: '/main/directives/views/cubeDirective.html',
         link: function (scope, element, attributes) {
           var cube = $('#cube')
-          $('.container-cube').hover(function(){
+          $('.container-cube').mouseenter(function(){
             $('.fullscreen-video').toggleClass('shade');
             $('#my-name').toggleClass('complete-opacity');
-          })
+            $('.container-cube').toggleClass("active");
+            console.log('hello')
+          });
+
           var cubeViews = [
             'show-front',
             'show-back',
